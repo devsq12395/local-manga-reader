@@ -14,6 +14,10 @@ const Reader: React.FC = () => {
   }, [navigate, pages.length]);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [currentIndex]);
+
+  useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'ArrowRight') {
         setCurrentIndex((prev) => Math.min(prev + 1, pages.length - 1));
